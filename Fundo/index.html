@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Fundo de Caixa</title>
+  </head>
+  <body>
+    <main>
+      <button id="toggle-mode">Alternar para modo claro</button>
+        
+      </div>
+      <h1>Fundo de Caixa</h1>
+      <p>Selecione a moeda ou cédula desejada:</p>
+      <select id="moeda">
+        <option value="0.05">5 Centavos</option>
+        <option value="0.1">10 Centavos</option>
+        <option value="0.25">25 Centavos</option>
+        <option value="0.5">50 Centavos</option>
+        <option value="1">1 Real</option>
+        <option value="2">2 Reais</option>
+        <option value="5">5 Reais</option>
+        <option value="10">10 Reais</option>
+        <option value="20">20 Reais</option>
+        <option value="50">50 Reais</option>
+        <option value="100">100 Reais</option>
+      </select>
+      <p>Insira a quantidade:</p>
+      <input type="number" id="quantidade" />
+      <br /><br />
+      <div id="botões">
+      <button id="add" >Adicionar</button>
+     
+      <br /><br />
+      <button id="calc" >Calcular</button>
+      
+      <br /><br />
+      <button id="clear">Limpar</button>
+    </div>
+    <p id="resultado"></p>
+    <p id="output"></p>
+    
+
+      <script>
+        var valores = []
+
+        document.getElementById('add').addEventListener('click', function () {
+          var moeda = document.getElementById('moeda').value
+          var quantidade = document.getElementById('quantidade').value
+          var resultado = moeda * quantidade
+          valores.push(resultado)
+          var node = document.createElement('LI')
+          var textnode = document.createTextNode(
+            moeda + ' - R$ ' + resultado.toFixed(2) + ' - '
+          )
+          node.appendChild(textnode)
+          var button = document.createElement('BUTTON')
+          var btnText = document.createTextNode('Limpar')
+          button.appendChild(btnText)
+          button.addEventListener('click', function () {
+            valores.splice(valores.indexOf(resultado), 1)
+            node.parentNode.removeChild(node)
+          })
+          node.appendChild(button)
+          document.getElementById('output').appendChild(node)
+        })
+
+        document.getElementById('calc').onclick = function () {
+          var total = 0
+          for (var i = 0; i < valores.length; i++) {
+            total += valores[i]
+          }
+          document.getElementById('resultado').innerHTML =
+            'O valor total é de <span> R$ ' + total.toFixed(2) + '</span>.'
+          if (total > 250) {
+            document.getElementById('resultado').innerHTML +=
+              '<br>Você precisa remover <span>R$' + (total - 250).toFixed(2) + '</span>.'
+          } else if (total < 250) {
+            document.getElementById('resultado').innerHTML +=
+              '<br>Você precisa adicionar <span>R$ ' + (250 - total).toFixed(2) + '</span>.'
+          }
+        }
+
+        document.getElementById('clear').onclick = function () {
+          valores = []
+          document.getElementById('output').innerHTML = ''
+          document.getElementById('resultado').innerHTML = ''
+        }
+      </script>
+
+<script>
+  const toggleBtn = document.getElementById("toggle-mode");
+  const body = document.querySelector("body");
+  const button = document.querySelector("button");
+  const button2 = document.querySelector("#add");
+  const button3 = document.querySelector("#calc");
+  const button4 = document.querySelector("#clear");
+  
+
+  toggleBtn.addEventListener("click", function() {
+    body.classList.toggle("dark-mode");
+    button.classList.toggle("dark-modeB");
+    button2.classList.toggle("dark-modeB");
+    button3.classList.toggle("dark-modeB");
+    button4.classList.toggle("dark-modeB");
+    if (body.classList.contains("dark-mode")) {
+      toggleBtn.innerHTML = "Alternar para modo escuro";
+    } else {
+      toggleBtn.innerHTML = "Alternar para modo claro";
+    }
+  });
+</script>
+    </main>
+  </body>
+</html>

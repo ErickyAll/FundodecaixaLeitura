@@ -1,0 +1,144 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+}
+
+h1,
+p,
+select,
+input,
+button {
+  margin: 0.5em 0;
+  text-align: center;
+}
+
+
+
+#output,
+#resultado {
+  text-align: left;
+}
+
+
+
+input[type='number'],
+select {
+  font-size: 18px;
+  padding: 6px;
+  margin: 6px 0;
+  width: 80%;
+}
+
+button {
+  font-size: 14px;
+  padding: 8px 16px;
+  margin: 8px ;
+  width: 10em;
+
+}
+
+button:hover {
+  background-color: darkblue;
+}
+
+p {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#output {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#output li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+
+
+#moeda, #quantidade {
+  font-size: 18px;
+}
+
+#output, #resultado {
+  margin-top: 13px;
+}
+
+#output li {
+  
+  list-
+
+  list
+
+ 
+list-style: none;
+}
+
+#toggle-mode {
+  width: 70%;
+  background-color: #1e1f40;
+  font-size: 16px;
+}
+
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  
+  background: linear-gradient(to bottom, #0e1f40, #0b5394);
+  background-repeat: no-repeat;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border: none;
+}
+
+button:hover {
+  background-color: darkblue;
+}
+
+
+
+.dark-mode {
+  background: linear-gradient(to bottom,  #add8e6, #ddd4e1);
+  color: black;
+}
+
+#botões{
+  display: flex;
+  justify-content: center;
+}
+
+.dark-modeB {
+  background-color: #0e1f40;
+  color: add8e6;
+}
+
+
